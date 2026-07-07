@@ -1,29 +1,41 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Group
+metadata:
+  name: platform-team
+  description: Equipo encargado de RoomBook
+spec:
+  type: team
+  profile:
+    displayName: Platform Team
+  children: []
 
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: roombook
+  description: Plataforma RoomBook
+spec:
+  owner: platform-team
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
 metadata:
   name: roombook-api
-
   description: Sistema de reservas desarrollado con Spring Boot
-
   tags:
     - java
     - springboot
     - docker
     - postgres
-
   annotations:
-    github.com/project-slug: tuUsuario/RoomBook
-
+    github.com/project-slug: carlos-navarro-dev-fullstack/Sistema_Reservas_Back
     backstage.io/techdocs-ref: dir:.
-
     grafana/dashboard-selector: roombook
 
 spec:
   type: service
-
   lifecycle: production
-
   owner: platform-team
-
   system: roombook
