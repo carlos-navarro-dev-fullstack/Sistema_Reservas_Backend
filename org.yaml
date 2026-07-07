@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: platform-team
+  title: Platform Team
+  description: Equipo encargado del desarrollo de RoomBook
+
+spec:
+  type: team
+
+  profile:
+    displayName: Platform Team
+
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: roombook
+  title: RoomBook Platform
+  description: Plataforma de reservas RoomBook
+
+spec:
+  owner: platform-team
